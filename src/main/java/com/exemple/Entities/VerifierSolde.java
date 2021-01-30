@@ -8,6 +8,7 @@ public class VerifierSolde {
     public void verifySolde(double solde) {
         if(CMIRepository.getsolde() > solde ){
             i = true;
+
         }
         else{
             i = false;

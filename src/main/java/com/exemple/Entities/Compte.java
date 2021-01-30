@@ -5,7 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Table(name = "compte")
 public class Compte {
     @Id @GeneratedValue
     private int idc;
