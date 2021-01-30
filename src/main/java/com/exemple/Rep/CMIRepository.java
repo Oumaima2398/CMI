@@ -15,7 +15,7 @@ public interface CMIRepository extends JpaRepository<User,Long>, PagingAndSortin
     @Query(value = "select tel from Blacklist", nativeQuery = true)
     static List<String> BlackList() { return null; }
 
-    @Query(value = "select * from ListePayes where id_facture=idf", nativeQuery = true)
+    @Query(value = "select * from ListeFactures where id_facture=idf and paye=true", nativeQuery = true)
     static List<Facture> DejaPayes() { return null; }
 
     @Query(value = "select solde from Compte where compte_id=idc", nativeQuery = true)

@@ -14,5 +14,5 @@ public class Facture {
     @Column(name = "paye")
     private boolean paye;
 
-    public List<Facture> DejaPayes;
+    public List<Facture> ListeFactures;
 }
