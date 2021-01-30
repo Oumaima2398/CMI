@@ -10,7 +10,6 @@ public class VerifierPayee {
     public void verifyPayee(Facture idf) {
         if(CMIRepository.DejaPayes().contains(idf) ){
             paye = true;
-            Payement p = new Payement();
         }
         else{
             paye = false;
