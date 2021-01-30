@@ -1,14 +1,12 @@
 package com.exemple.Entities;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Table(name="Blacklist")
+@Entity
 public class BlackList {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idUser;
 
     @Column(name = "nom")

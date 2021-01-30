@@ -1,13 +1,12 @@
 package com.exemple.Entities;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Table(name = "payement")
+@Entity
 public class Payement {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idp;
 
     public int getIdp() {

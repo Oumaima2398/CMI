@@ -1,20 +1,18 @@
 package com.exemple.Entities;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Table(name = "facture")
+@Entity
 public class Facture {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idf;
     @Column(name = "paye")
     private boolean paye;
 
-    public List<Facture> ListeFactures;
+    //public List<Facture> ListeFactures;
 
     public int getIdf() {
         return idf;
@@ -28,13 +26,7 @@ public class Facture {
         return paye;
     }
 
-    public List<Facture> getListeFactures() {
-        return ListeFactures;
-    }
 
-    public void setListeFactures(List<Facture> listeFactures) {
-        ListeFactures = listeFactures;
-    }
 
     public void setPaye(boolean paye) {
         this.paye = paye;
@@ -43,6 +35,5 @@ public class Facture {
     public Facture(int idf, boolean paye, List<Facture> listeFactures) {
         this.idf = idf;
         this.paye = paye;
-        this.ListeFactures = listeFactures;
     }
 }

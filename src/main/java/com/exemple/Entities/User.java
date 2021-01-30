@@ -1,16 +1,19 @@
 package com.exemple.Entities;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Table(name = "user")
+@Entity
 public class User {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idUser;
+
+    public User() {
+    }
 
     @Column(name = "nom")
     public String nom;

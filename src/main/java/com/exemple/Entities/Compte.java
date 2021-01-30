@@ -2,16 +2,14 @@ package com.exemple.Entities;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Table(name = "compte")
+@Entity
 public class Compte {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idco;
-    @Id @GeneratedValue
+    @Column(name = "idcl")
     private int idcl;
     @Column(name = "solde")
     private double solde;
