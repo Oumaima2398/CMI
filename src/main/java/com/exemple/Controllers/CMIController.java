@@ -8,8 +8,8 @@ import com.exemple.Services.CMIService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/CMI")
 public class CMIController {
-    CMIRepository rep;
     CMIService cmiService;
 
     @GetMapping("/{id}")
