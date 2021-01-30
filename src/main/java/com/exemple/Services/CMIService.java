@@ -7,45 +7,40 @@ import com.exemple.Rep.CMIRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class CMIService {
-    public boolean paye;
-    private Boolean permission;
-    private boolean i;
+
     @Autowired
     private CMIRepository CMIRepo ;
 
-    /*public void create(Payement o) {
-        CMIRepo.save(o);
-    }*/
 
     public User findById(int id) {
         return CMIRepo.findById((long) id).get();
     }
 
-    public void verifySolde(double solde) {
+    public boolean verifySolde(double solde) {
         if(CMIRepository.getsolde() > solde ){
-            i = true;
             Payement p = new Payement();
+            return true;
         }
         else{
-            i = false;
+            return false;
         }
     }
 
-    public void verifyBlackList(User user) {
+    public boolean verifyBlackList(User user) {
         if(CMIRepository.BlackList().contains(user.telephone) ){
-            permission = false;
+            return false;
         }
         else{
-            permission = true;
+            return true;
         }
     }
-    public void verifyPayee(Facture idf) {
+    public boolean verifyPayee(int idf) {
 
         if(CMIRepository.DejaPayes().contains(idf) ){
-            paye = true;
+            return true;
         }
         else{
-            paye = false;
+            return false;
         }
     }
 
