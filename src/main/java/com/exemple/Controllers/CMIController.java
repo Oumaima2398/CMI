@@ -5,10 +5,7 @@ import com.exemple.Entities.Payement;
 import com.exemple.Entities.User;
 import com.exemple.Rep.CMIRepository;
 import com.exemple.Services.CMIService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class CMIController {
@@ -19,20 +16,20 @@ public class CMIController {
     public User getUserById(@PathVariable int id){
         return cmiService.findById(id);
     }
-    @PostMapping
+    @RequestMapping(value = "/VerifierSolde", method = RequestMethod.POST)
     public void VerifierSolde(@PathVariable double solde){
         if(cmiService.verifySolde(solde)==false){
             System.out.println("Solde inssufisant");
         }
     }
-    @PostMapping
+    @RequestMapping(value = "/VerifierPermission", method = RequestMethod.POST)
     public void VerifierPermission(@PathVariable User user){
         if(cmiService.verifyBlackList(user)==false){
             System.out.println("Le compte de paiement ne peut pas etre crée");
         }
     }
 
-    @PostMapping
+    @RequestMapping(value = "/VerifierPayes", method = RequestMethod.POST)
     public void VerifierPayees(@PathVariable Facture f){
         if(cmiService.verifyPayee(f.getIdf())==true){
             System.out.println("Cette facture est dèjà payée");
