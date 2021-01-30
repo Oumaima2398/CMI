@@ -10,4 +10,13 @@ public class Payement {
     @GeneratedValue
     private int idp;
 
+    public int getIdp() {
+        return idp;
+    }
+
+    public void setIdp(int idp) {
+        this.idp = idp;
+    }
+
+    public Payement() {}
 }

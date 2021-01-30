@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface CMIRepository extends JpaRepository<User,Long>, PagingAndSortingRepository<User, Long> {
+public interface CMIRepository extends JpaRepository<User,Long>,PagingAndSortingRepository<User, Long> {
 
     @Query(value = "select tel from Blacklist", nativeQuery = true)
     static List<String> BlackList() { return null; }
