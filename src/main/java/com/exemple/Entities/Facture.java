@@ -12,7 +12,10 @@ public class Facture {
     @Column(name = "paye")
     private boolean paye;
 
-    //public List<Facture> ListeFactures;
+    public Facture() {
+
+    }
+
 
     public int getIdf() {
         return idf;

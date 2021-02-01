@@ -16,13 +16,17 @@ public class User {
     }
 
     @Column(name = "nom")
-    public String nom;
+    private String nom;
 
     @Column(name = "prenom")
-    public String prenom;
+    private String prenom;
 
-    @Column(name = "telephone")
-    public String telephone;
+    @Column(name = "phone")
+    private String phone;
+
+    @Column(name = "isBlacklisted")
+    private Boolean isBlacklisted;
+
 
     public int getIdUser() {
         return idUser;
@@ -48,18 +52,18 @@ public class User {
         this.prenom = prenom;
     }
 
-    public String getTelephone() {
-        return telephone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
+    public void setPhone(String telephone) {
+        this.phone = telephone;
     }
 
     public User(int idUser,String nom,String prenom,String telephone) {
         this.idUser = idUser;
         this.nom = nom;
         this.prenom = prenom;
-        this.telephone = telephone;
+        this.phone = telephone;
     }
 }

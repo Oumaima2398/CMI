@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class CMIApplication {
 
+
     public static void main(String[] args) {
         SpringApplication.run(CMIApplication.class, args);
     }

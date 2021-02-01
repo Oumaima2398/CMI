@@ -14,6 +14,10 @@ public class Compte {
     @Column(name = "solde")
     private double solde;
 
+    public Compte() {
+
+    }
+
     public double getSolde() {
         return solde;
     }
