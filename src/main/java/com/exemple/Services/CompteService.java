@@ -17,4 +17,8 @@ public class CompteService {
         return  compteRepository.getsolde(compte.getIdco());
 
     }
+    public double prix(int idp){
+        return  compteRepository.getprix(idp);
+
+    }
 }

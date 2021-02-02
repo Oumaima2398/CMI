@@ -9,5 +9,7 @@ public interface CompteRepository extends JpaRepository<Compte,Integer> {
 
     @Query(value = "select solde from Compte where  idco=:idco", nativeQuery = true)
     public double getsolde(int idco);
+    @Query(value = "select prix from Payement where  idp=:idp", nativeQuery = true)
+    public double getprix(int idp);
 
 }

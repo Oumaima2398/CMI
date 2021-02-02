@@ -10,7 +10,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int idUser;
+    private int id_user;
 
     public User() {
     }
@@ -24,16 +24,16 @@ public class User {
     @Column(name = "phone")
     private String phone;
 
-    @Column(name = "isBlacklisted")
-    private Boolean isBlacklisted;
+    @Column(name = "is_blacklisted")
+    private Boolean is_blacklisted;
 
 
     public int getIdUser() {
-        return idUser;
+        return id_user;
     }
 
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
+    public void setIdUser(int id_user) {
+        this.id_user = id_user;
     }
 
     public String getNom() {
@@ -60,10 +60,19 @@ public class User {
         this.phone = telephone;
     }
 
-    public User(int idUser,String nom,String prenom,String telephone) {
-        this.idUser = idUser;
+    public Boolean getIs_blacklisted() {
+        return is_blacklisted;
+    }
+
+    public void setIs_blacklisted(Boolean is_blacklisted) {
+        this.is_blacklisted = is_blacklisted;
+    }
+
+    public User(int id_user, String nom, String prenom, String telephone,Boolean is_blacklisted) {
+        this.id_user = id_user;
         this.nom = nom;
         this.prenom = prenom;
         this.phone = telephone;
+        this.is_blacklisted = is_blacklisted;
     }
 }

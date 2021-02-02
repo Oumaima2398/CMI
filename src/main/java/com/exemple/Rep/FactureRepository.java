@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface FactureRepository extends JpaRepository<Facture,Integer> {
 
-    @Query(value = "select * from Facture where idf=:idf and paye=true", nativeQuery = true)
+    @Query(value = "select paye from facture where idf=:idf", nativeQuery = true)
     Boolean DejaPayes(int idf);
 }

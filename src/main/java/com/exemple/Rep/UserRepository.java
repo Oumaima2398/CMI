@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface UserRepository extends JpaRepository<User,Integer> {
 
-    @Query(value = "select isBlacklisted from User where  phone=:phone", nativeQuery = true)
+    @Query(value = "select is_blacklisted from user where phone=:phone", nativeQuery = true)
     public Boolean isBlacklisted(String phone);
 }

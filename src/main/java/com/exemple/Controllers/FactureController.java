@@ -13,7 +13,7 @@ public class FactureController {
 
     @Autowired
     FactureService factureService;
-    @RequestMapping(value="/cmi/isPaye",method= RequestMethod.GET)
+    @RequestMapping(value="/cmi/isPaye",method= RequestMethod.POST)
     public Boolean isPaye(@RequestBody Facture facture) {
         return  factureService.isPaye(facture);
     }

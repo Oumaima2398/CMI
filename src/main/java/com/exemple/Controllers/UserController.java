@@ -13,7 +13,7 @@ public class UserController {
 
     @Autowired
     UserService userService;
-    @RequestMapping(value="/cmi/isInBlackList",method= RequestMethod.GET)
+    @RequestMapping(value="/cmi/isInBlackList",method= RequestMethod.POST)
     public Boolean getBlackList(@RequestBody User user) {
         return  userService.isClientBlacklisted(user);
     }

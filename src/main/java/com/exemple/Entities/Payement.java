@@ -29,4 +29,9 @@ public class Payement {
     }
 
     public Payement() {}
+
+    public Payement(int idp, double prix) {
+        this.idp = idp;
+        this.prix = prix;
+    }
 }

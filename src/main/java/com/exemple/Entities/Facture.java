@@ -35,7 +35,7 @@ public class Facture {
         this.paye = paye;
     }
 
-    public Facture(int idf, boolean paye, List<Facture> listeFactures) {
+    public Facture(int idf, boolean paye) {
         this.idf = idf;
         this.paye = paye;
     }
